@@ -51,6 +51,7 @@ class Command(BaseCommand):
                 "description": fake.paragraph(),
                 "special": fake.boolean(),
                 "featured": fake.boolean(),
+                "price": random.randint(5, 50),
                 "small_image": image['small_image'],
                 "large_image": image['large_image'],
                 }
