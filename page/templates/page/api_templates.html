@@ -1,0 +1,52 @@
+{% for api in apis %}
+<h2 id="api.id">{{ api.title }}</h2>
+<p>{{ api.description }}</p>
+{% for endpoint in api.endpoints%}
+<div class="row" id="{{ endpoint.id }}">
+    <div class="col-md-12">
+        <h3>{{ endpoint.method }} <code>{{ endpoint.endpoint }}</code></h3>
+        <p>{{ endpoint.description }}</p>
+    </div>
+    <div class="col-md-6">
+        {% if endpoint.query_params %}
+        <h4>Query Parameters</h4>
+        <ul>
+            {% for param in endpoint.query_params %}
+            <li><strong>{{ param.name }}</strong> - {{ param.description }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <h4>Request Headers</h4>
+        <ul>
+            {% for param in endpoint.request_headers %}
+            <li><strong>{{ param.name }}</strong> - {{ param.description }}</li>
+            {% endfor %}
+        </ul>
+        <h4>Response Headers</h4>
+        <ul>
+            {% for param in endpoint.response_headers %}
+            <li><strong>{{ param.name }}</strong> - {{ param.description }}</li>
+            {% endfor %}
+        </ul>
+        <h4>Status Codes</h4>
+        <ul>
+            {% for status in endpoint.status_codes %}
+            <li><strong>{{ status.code }}</strong> - {{ status.description }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-6">
+        {% if endpoint.example_request %}
+        <h4>Example Request</h4>
+        <pre><code class="http">{% include endpoint.example_request %}</code></pre>
+        {% endif %}
+        <h4>Example Response</h4>
+        <pre><code class="http">{% include endpoint.example_response %}</code></pre>
+    </div>
+    <div class="col-md-12">
+        <p><a href="#top"><i class="fa fa-arrow-up"></i>Back to Top</a></p>
+    </div>
+</div>
+{% endfor %}
+{% endfor %}
+

@@ -1,0 +1,17 @@
+POST /v1/products/1/ HTTP/1.1
+Host: example.com
+Accept: application/json
+Content-Type: application/json
+X-Auth-Token: abcd1234
+
+{
+    "category": 2,
+    "status": "active",
+    "description": "Some short description",
+    "price": "2.00",
+    "featured": true,
+    "small_image": "http://www.example.com/images/tee2.png",
+    "large_image": "http://www.example.com/images/tee2.png",
+    "special": false,
+    "name": "Funny T-Shirt"
+}

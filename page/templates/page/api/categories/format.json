@@ -1,0 +1,14 @@
+[
+  {
+    "description": "New description of the product",
+    "id": 2,
+    "carousel": false,
+    "name": "Product Name"
+  },
+  {
+    "description": "Some description of shoes",
+    "id": 3,
+    "carousel": false,
+    "name": "Shoes"
+  }
+]

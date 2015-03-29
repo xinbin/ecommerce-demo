@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>About Ecommerce Website</h1>
+<dl>
+    <dt>Author</dt>
+    <dd>Brady Vitrano</dd>
+</dl>
+<h2>Purpose</h2>
+<p>To have an ecommerce type website for test automation of cloud products.</p>
+<h2>Features</h2>
+<p>Ecommerce website has limited functionality due to its limited requirements.</p>
+<h3>&bullet; Catalog</h3>
+<p>Browse a list of products by category.</p>
+<ul>
+    <li>The catalog page <a href="/catalog/">/catalog/</a> lists all the <code>Products</code> which have been
+    flagged as <code>featured</code>.</li>
+    <li>The left hand navigation are all <code>active</code> categories by title.</li>
+    <li>You can click on a category to view the category page which lists all products by category.</li>
+    <li>The category page <a href="/catalog/1">/catalog/1/</a> has only <code>active</code> products.</li>
+    <li>The category page <a href="/catalog/1">/catalog/1/</a> also has a <strong>specials</strong> link to view website specials.</li>
+</ul>
+<h3>&bullet; Products</h3>
+<p>Let's sell some products!</p>
+<ul>
+    <li> <strong>Some Properties (see <a href="/docs/api/">api</a> for the rest): </strong>
+        <ul>
+            <li><code>special</code> - used to mark a product as on special</li>
+            <li><code>status</code> - allowed values (active, inactive, archived, deleted)</li>
+            <li><code>small_image</code> - image url. This should be 320x150px</li>
+            <li><code>large_image</code> - image url. This should be 800x300px</li>
+        </ul>
+    </li>
+</ul>
+<h3>&bullet; Images</h3>
+<p>Images can be either hosted on the website or sourced from other places.</p>
+<ul>
+    <li>TODO: Add images API</li>
+    <li>See folder<code>/website/static/images</code> for existing images.</li>
+    <li>If you want to use existing images. Use the relative path when creating a product or article ex: <code>/static/images/products/image1_320x150.jpg</code></li>
+    <li>Sources:
+        <ul>
+            <li>http://jaymantri.com/</li>
+            <li>http://www.imcreator.com/</li>
+            <li>http://nos.twnsnd.co/</li>
+        </ul>
+    </li>
+</ul>
+<h3>&bullet; Specials</h3>
+<p>The website allows for marking products as on special via the <code>Product</code> <code>special</code> flag.</p>
+<ul>
+    <li>The specials page <a href="/specials/">/specials/</a> works conditionally.
+        <p>This will show either all products on special OR by category based on <code>COOKIE['PRODUCTS']</code></p>
+        <ol>
+            <li>If the cookie <code>PRODUCTS</code> is not present. It will show all <code>Products</code> with the <code>special</code> flag</li>
+            <li>If the cookie <code>PRODUCTS</code> <strong>IS</strong> present. It will show only products in that category with the <code>special</code> flag.</li>
+        </ol>
+        <p>To show products on special by category, add the <code>PRODUCTS</code> cookie and set it to a <code>Category</code> <code>id</code></p>
+    </li>
+</ul>
+<h3>&bullet; Shopping Cart</h3>
+<p>The shopping cart has limited functionality. It should not be cached by any services.</p>
+<ul>
+    <li>You can add products to the shopping cart by clicking <strong>Add to Cart</strong></li>
+    <li>The shopping cart <a href="/cart/">/cart/</a> only supports adding and removing products. However, that is all!</li>
+</ul>
+<h3>&bullet; Blog</h3>
+<p>The blog serves as an example section of a site that should be cached as much as possible.</p>
+<ul>
+    <li> <strong>Some Properties (see <a href="/docs/api/">api</a> for the rest): </strong>
+        <ul>
+            <li><code>status</code> - allowed values (active, inactive, archived, deleted)</li>
+            <li><code>img</code> - image url. This should be 900x300px</li>
+        </ul>
+    </li>
+</ul>
+
+{% endblock %}

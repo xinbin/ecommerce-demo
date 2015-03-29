@@ -1,0 +1,8 @@
+<div class="col-md-3">
+    <p class="lead">Ecommerce</p>
+    <div class="list-group">
+        {% for category in categories %}
+        <a href="/catalog/{{ category.id }}" class="list-group-item">{{ category.name }}</a>
+        {% endfor %}
+    </div>
+</div>

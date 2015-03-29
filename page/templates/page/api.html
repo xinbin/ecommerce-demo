@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<style>
+    #documentation pre{padding: 0; margin: 0;}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{% endblock %}
+
+{% block content %}
+<h1>API Documentation</h1>
+<p>API allows for seamless integration with ecommerce website for automation.</p>
+<p>This API only responds with <code>application/json</code>.</p>
+<ul>
+    <li><p>
+        <a href="#categories">Product Categories</a>
+        - Requirement for products. One to Many relationship with products.
+        </p>
+        <ul>
+            <li><a href="#categories-get"><code>GET /v1/categories/</code></a> - Fetch all categories</li>
+            <li><a href="#categories-post"><code>POST /v1/categories/</code></a> - Add a category</li>
+            <li><a href="#categories-get-item"><code>GET /v1/categories/:id</code></a> - Fetch a specific category</li>
+            <li><a href="#categories-put"><code>PUT /v1/categories/:id</code></a> - Edit a category</li>
+            <li><a href="#categories-delete"><code>DELETE /v1/categories/:id</code></a> - Delete a category</li>
+        </ul>
+    </li>
+    <li><p>
+        <a href="#products">Products</a>
+        - Items for purchase on website
+        </p>
+        <ul>
+            <li><a href="#products-get"><code>GET /v1/products/</code></a> - Fetch all products</li>
+            <li><a href="#products-post"><code>POST /v1/products/</code></a> - Add a product</li>
+            <li><a href="#products-get-item"><code>GET /v1/products/:id/</code></a> - Fetch a specific product</li>
+            <li><a href="#products-put"><code>PUT /v1/products/:id/</code></a> - Edit a product</li>
+            <li><a href="#products-delete"><code>DELETE /v1/products/:id/</code></a> - Delete a product</li>
+        </ul>
+    </li>
+    <li><p>
+        <a href="#articles">Blog</a>
+        - Articles of the website.
+    </p>
+        <ul>
+            <li><a href="#articles-get"><code>GET /v1/articles/</code></a> - Fetch all articles</li>
+            <li><a href="#articles-post"><code>POST /v1/articles/</code></a> - Add an article</li>
+            <li><a href="#articles-get-item"><code>GET /v1/articles/:id/</code></a> - Fetch a specific article</li>
+            <li><a href="#articles-put"><code>PUT /v1/articles/:id</code></a> - Edit an article</li>
+            <li><a href="#articles-delete"><code>DELETE /v1/articles/:id</code></a> - Delete an article</li>
+        </ul>
+    </li>
+</ul>
+<div id="documentation">
+    {% include "page/api_templates.html" %}
+</div>
+
+
+{% endblock %}
