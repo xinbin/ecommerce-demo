@@ -2,6 +2,14 @@
 Sample Ecommerce Website
 ****************************
 
+============
+Pre Install
+============
+.. code:: bash
+    cd ecommerce-demo
+    pip install -r requirements.txt
+
+
 =========
 Install
 =========
